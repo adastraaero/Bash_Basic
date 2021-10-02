@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+#demonstrates making menus with select
+
+echo "chose a directory:"
+select dir in /bin /usr /etc
+do
+	#only continues if user has selectes something
+	if [ -n "$dir" ]
+	then
+		DIR=$dir
+		echo you have selected $DIR
+		export DIR
+		break
+	else
+		echo invalid choce
+	fi
+done
